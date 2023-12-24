@@ -1,4 +1,3 @@
-#include "Poco/Net/Net.h"
 #include "Poco/Net/StreamSocket.h"
 #include "Poco/Net/SocketAddress.h"
 
