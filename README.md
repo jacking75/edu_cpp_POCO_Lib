@@ -26,7 +26,12 @@ vcpkg install poco --triplet x64-windows
 <br>     
    
    
-## YOUTUBE 강의    
+## YOUTUBE 강의 
+예제 코드는 poco_samples 디렉토리 안에 있다.  
+     
 - 01. 소개와 사용하기 [영상](https://youtu.be/GFU1HxxVKx0?si=9OiLYIoqFlaVPb4k ) [문서](https://docs.google.com/presentation/d/e/2PACX-1vSOnOCrEOzG2ibKyQhjEtWlvbROCwbn7S6ZihGm3fIuqZ0WOKiKyCqoEJQ8XakRH3mLcUFfmW-jkONJ/pub?start=false&loop=false&delayms=3000 )
 - 02. Poco.Net을 이용한 네트워크 프로그래밍 소개 [영상](https://youtu.be/g49BA8I9aQ8?si=FCSpYFZMk9ej4USd ) [문서](https://docs.google.com/presentation/d/e/2PACX-1vSky41dsHEnn5SktQp__a3LfFree7hobZiHhKCtXovXecLphOdctzMf41CEGG2YRjcW_vGQJ4HM4t4N/pub?start=false&loop=false&delayms=3000 )
+- 03. TCP Echo Server/Client [영상](https://youtu.be/U6VgV_vTa8w?si=RoUNOIkF1toictFA )  [문서](https://docs.google.com/presentation/d/e/2PACX-1vRhVRYBCO6QgAygV271R9unpvJ8A5C9bmeneJQsl_UoeBVNAndtjnj9pXNBgbln9_Db5oZ6JTTOhM_p/pub?slide=id.p1 ) 
+    - 예제코드: `block_echo_server`  `block_echo_client`  
+	
    
