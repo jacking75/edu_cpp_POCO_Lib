@@ -28,11 +28,8 @@ int main()
 		{
 			char szMessage[128] = { 0, };
 			sprintf_s(szMessage, 128 - 1, "%d - Send Message", i);
+			
 			int nMsgLen = strnlen_s(szMessage, 128 - 1);
-
-			//char szMessage[] = "Send Message From Client";
-			//auto nMsgLen = (int)strnlen_s(szMessage, 128 - 1);
-
 			ss.sendBytes(szMessage, nMsgLen);
 			std::cout << "서버에 보낸 메시지: " << szMessage << std::endl;
 

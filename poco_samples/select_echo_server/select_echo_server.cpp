@@ -29,7 +29,7 @@ int main()
 		//Poco::Net::Socket::SocketList writeList(connectedSockList.begin(), connectedSockList.end());
 		Poco::Net::Socket::SocketList exceptList(connectedSockList.begin(), connectedSockList.end());
 		
-		Poco::Timespan timeout(1);
+		Poco::Timespan timeout(1); // 1 마이크로 초
 
 		auto count = Poco::Net::Socket::select(readList, writeList, exceptList, timeout);
 
@@ -53,7 +53,7 @@ int main()
 				char buffer[256] = { 0, };
 				auto n = ((Poco::Net::StreamSocket*)&readSock)->receiveBytes(buffer, sizeof(buffer));
 
-				if (n != 0) {
+				if (n > 0) {
 					std::cout << "클라이언트에서 받은 메시지: " << buffer << std::endl;
 
 					
