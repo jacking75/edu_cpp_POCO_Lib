@@ -33,7 +33,7 @@ vcpkg install poco --triplet x64-windows
 - 02. Poco.Net을 이용한 네트워크 프로그래밍 소개 [영상](https://youtu.be/g49BA8I9aQ8?si=FCSpYFZMk9ej4USd ) [문서](https://docs.google.com/presentation/d/e/2PACX-1vSky41dsHEnn5SktQp__a3LfFree7hobZiHhKCtXovXecLphOdctzMf41CEGG2YRjcW_vGQJ4HM4t4N/pub?start=false&loop=false&delayms=3000 )
 - 03. TCP Echo Server/Client [영상](https://youtu.be/U6VgV_vTa8w?si=RoUNOIkF1toictFA )  [문서](https://docs.google.com/presentation/d/e/2PACX-1vRhVRYBCO6QgAygV271R9unpvJ8A5C9bmeneJQsl_UoeBVNAndtjnj9pXNBgbln9_Db5oZ6JTTOhM_p/pub?slide=id.p1 ) 
     - 예제코드: `block_echo_server`  `block_echo_client`  
-- 04. 04. TCP Echo Server/Client: 논블럭킹, 멀티플렉싱(Multiplexing) [영상](https://youtu.be/U7jUTEcYQ-k)  [문서](https://docs.google.com/presentation/d/e/2PACX-1vS9NK6HHr9thb4jPDKDUegvvzr3iQHhJ8-FofLmztr--FtSh5xhCoe9DqbjYjLXo2y0mY3d5o-iRtkw/pub?start=false&loop=false&delayms=3000 )
+- 04. TCP Echo Server/Client: 논블럭킹, 멀티플렉싱(Multiplexing) [영상](https://youtu.be/U7jUTEcYQ-k)  [문서](https://docs.google.com/presentation/d/e/2PACX-1vS9NK6HHr9thb4jPDKDUegvvzr3iQHhJ8-FofLmztr--FtSh5xhCoe9DqbjYjLXo2y0mY3d5o-iRtkw/pub?start=false&loop=false&delayms=3000 )
     - 예제코드: `non-block_echo_client`   `select_echo_server`  
 - 
 - 

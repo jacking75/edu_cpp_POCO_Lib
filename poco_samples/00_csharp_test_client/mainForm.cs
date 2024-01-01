@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace csharp_test_client
 {
+    [SupportedOSPlatform("windows10.0.177630")]
     public partial class mainForm : Form
     {
         ClientSimpleTcp Network = new ClientSimpleTcp();
@@ -21,7 +23,7 @@ namespace csharp_test_client
 
         Queue<byte[]> SendPacketQueue = new Queue<byte[]>();
 
-        System.Windows.Threading.DispatcherTimer dispatcherUITimer;
+        System.Windows.Forms.Timer dispatcherUITimer = new();
 
 
 
@@ -38,11 +40,10 @@ namespace csharp_test_client
             NetworkSendThread = new System.Threading.Thread(this.NetworkSendProcess);
             NetworkSendThread.Start();
 
-            dispatcherUITimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherUITimer.Tick += new EventHandler(BackGroundProcess);
-            dispatcherUITimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            dispatcherUITimer.Interval = 100;
             dispatcherUITimer.Start();
-
+            
             btnDisconnect.Enabled = false;
 
             DevLog.Write("프로그램 시작 !!!", LOG_LEVEL.INFO);
@@ -106,7 +107,7 @@ namespace csharp_test_client
 
                 if (recvData != null)
                 {
-                    DevLog.Write($"받은 데이터: {recvData.Item2}", LOG_LEVEL.INFO);
+                    DevLog.Write($"받은 데이터 크기: {recvData.Item1}, {Encoding.UTF8.GetString(recvData.Item2)}", LOG_LEVEL.INFO);
                 }
                 else
                 {

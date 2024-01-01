@@ -68,16 +68,19 @@ void PrintServerStatus(Poco::Net::TCPServer& server)
 
 int main(int, char**)
 {
+	std::cout << "Simple TCP Server Application." << std::endl;
+
 	Poco::Net::ServerSocket sock(SERVER_PORT);
 	sock.listen();
 
+	
 	auto pParams = new Poco::Net::TCPServerParams;
-	pParams->setMaxThreads(4);
-	pParams->setMaxQueued(4);
+	pParams->setMaxThreads(2); // 최대 동시 접속은 2개까지만 가능하다
+	pParams->setMaxQueued(2); // 대기는 최대 2개까지만 가능하다.
 	
 	Poco::Net::TCPServer server(new SessionFactory(), sock, pParams);
 
-	std::cout << "Simple TCP Server Application." << std::endl;
+	// start 함수를 호출해야 접속을 받을 수 있다.
 	PrintServerStatus(server);
 	
 	server.start();
@@ -85,7 +88,6 @@ int main(int, char**)
 	while (true)
 	{
 		Poco::Thread::sleep(2000);
-
 		PrintServerStatus(server);
 	}
 

@@ -44,6 +44,8 @@ public:
 		{
 			std::cerr << "Session: " << exc.displayText() << std::endl;
 		}
+
+		// run() 함수를 빠져 나오면 서버도 접속을 끊고, 할당된 스레드를 스레드큐로 반환한다
 	}
 };
 
@@ -55,22 +57,24 @@ public:
 
 	virtual Poco::Net::TCPServerConnection* createConnection(const Poco::Net::StreamSocket &socket)
 	{
+		// Session 객체가 만들어지면서 스레드를 할당한다
 		return new Session(socket);
 	}
 };
 
 int main(int, char**)
 {
+	std::cout << "Simple TCP Server Application." << std::endl;
+
 	Poco::Net::ServerSocket sock(SERVER_PORT);
 	sock.listen();
 
 	Poco::Net::TCPServer server(new SessionFactory(), sock);
-
-	std::cout << "Simple TCP Server Application." << std::endl;	
+		
 	printf("maxThreads:%d, maxConcurrentConnections:%d\n", 
 		        server.maxThreads(), server.maxConcurrentConnections());
 	
-	
+	// start 함수를 호출해야 접속을 받을 수 있다.
 	server.start();
 	
 	while (true)
